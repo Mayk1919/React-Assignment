@@ -11,7 +11,6 @@ products.map((product) => {
     if (product.Price > maxPriceAllProductList) {
         maxPriceAllProductList = product.Price;
     }
-    
 });
 
 let uniqueCategories = [
@@ -49,7 +48,7 @@ class Table extends Component {
         } else {
             this.setState({ display: "none" });
         }
-        manufacturerFilter=manufacturerList
+       
     };
 
     handleApply = () => {
@@ -100,7 +99,8 @@ class Table extends Component {
                 .querySelectorAll(".category")
                 .forEach((el) => (el.checked = false));
         }
-        console.log(categoryFilter)
+        console.log(categoryFilter);
+        console.log(categoryList);
     };
 
     handleCheck = (e) => {
@@ -109,13 +109,13 @@ class Table extends Component {
             categoryFilter.push(e.target.defaultValue);
         } else {
             categoryFilter.splice(
-                categoryFilter.indexOf(e.target.defaultValue),
-                1
+                categoryFilter.indexOf(e.target.defaultValue)
             );
         }
         console.log(categoryFilter);
+        console.log(categoryList);
     };
-    
+
     handleManufacturerExcept = () => {
         this.setState({
             isManufactureExcept: !this.state.isManufacturerExcept,
@@ -235,7 +235,7 @@ class Table extends Component {
         let average = 0;
         average = (total / this.state.products.length).toFixed(2);
         console.log(categoryList);
-        
+
         return (
             <Fragment>
                 <div
